@@ -74,6 +74,7 @@ class TestPriors:
         self.m.M2.prior = Prior(
             GaussianBoundedRV(loc=0.26, scale=0.10, lower_bound=0.0, upper_bound=0.6)
         )
+        assert self.m.M2.prior._rv.dist.name == "truncnorm"
         assert self.m.M2.prior_pdf(-0.1) == 0.0
         assert self.m.M2.prior_pdf(0.7) == 0.0
         assert self.m.M2.prior_pdf(-0.1, logpdf=True) == -np.inf

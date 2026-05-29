@@ -9,6 +9,7 @@ the released changes.
 
 ## Unreleased
 ### Changed
+- Updated `pint.models.priors.GaussianBoundedRV` to use `scipy.stats.truncnorm`.
 ### Added
 ### Fixed
 - Fixed bug where "include_bipm" flag was being ignored when loading Fermi TOAs with weights, now defaults to using EPHEM, CLOCK and PLANET_SHAPIRO from the timing model
